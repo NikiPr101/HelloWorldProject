@@ -10,6 +10,7 @@ public class HelloWorld {
 		 * Mehrzeiliger Kommentar
 		 */
 		System.out.println(Servus Klasse!);
+		System.out.println(Servus Inf Team);
 	}
 
 }
