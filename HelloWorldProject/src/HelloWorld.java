@@ -9,6 +9,7 @@ public class HelloWorld {
 		/*
 		 * Mehrzeiliger Kommentar
 		 */
+		System.out.println(Servus Klasse!);
 	}
 
 }
