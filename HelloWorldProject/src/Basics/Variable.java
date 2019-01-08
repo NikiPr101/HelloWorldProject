@@ -35,6 +35,23 @@ public class Variable {
 		System.out.println(longVar);
 		//
 		System.out.println(System.currentTimeMillis());
+		//
+		//
+		float floatVar;
+		floatVar=10/3f;
+		System.out.println(floatVar);
+		System.out.println(Float.MAX_VALUE);
+		System.out.println(Float.MAX_VALUE);
+		//
+		//
+		double doubleVar;
+		doubleVar=10/3d;
+		System.out.println(doubleVar);
+		//
+		//
+		String stringVar;
+		stringVar="Hello there, General Kenobi";
+		System.out.println(stringVar);
 	}
 
 }
