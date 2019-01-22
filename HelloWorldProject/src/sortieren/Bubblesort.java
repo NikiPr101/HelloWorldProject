@@ -8,8 +8,9 @@ public class Bubblesort {
 		for (int i = 0; i < zahlen.length; i++) {
 			System.out.println(zahlen[i]);
 		}
+		System.out.println("----------------------");
 //Bubblesort
-System.out.println("----------------------");
+
 		for (int z = zahlen.length; z > 1; z--) {
 			for (int s = 0; s < z - 1; s++) {
 				if (zahlen[s] > zahlen[s + 1]) {
