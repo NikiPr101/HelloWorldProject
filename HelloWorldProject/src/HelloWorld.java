@@ -10,6 +10,6 @@ public class HelloWorld {
 		 * Mehrzeiliger Kommentar
 		 */
 		System.out.println("Servus Klasse!");
-		System.out.println("Servus, Schönen Tag")
+		System.out.println("Servus, Schönen Tag");
 
 }
