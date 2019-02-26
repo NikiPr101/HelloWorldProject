@@ -6,7 +6,7 @@ public class Bubblesort {
 		// TODO Auto-generated method stub
 
 		// Länge der Reihe
-		int[] zahlen = { 3, 1, 9, 5, 2, 8, 6, 5, 18 };
+		int[] zahlen = { 3, 1, 9, 5, 2, 8, 6, 5, 18, 32 };
 		System.out.println("Die Reihe hat " + zahlen.length + " Zahlen");
 		for (int i = 0; i < zahlen.length; i++) {
 			System.out.println(zahlen[i]);
