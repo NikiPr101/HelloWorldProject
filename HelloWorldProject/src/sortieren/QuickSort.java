@@ -21,9 +21,14 @@ public class QuickSort {
 // sortieren 
 
 // quicksort(0,6) // zahlen.length -1 
-
+		quicksort(0, zahlen.length - 1);
 // sortierte zahlen ausgegebn 
-
+		//
+		System.out.println("---");
+		//
+		for (int i = 0; i < zahlen.length; i++) {
+			System.out.println(zahlen[i]);
+		}
 	}
 
 	static void quicksort(int links, int rechts) {
@@ -46,9 +51,9 @@ public class QuickSort {
 
 		// variablen
 
-		int i = zahlen[0];
-		int pivot = zahlen[rechts];
+		int i = links;
 		int j = rechts - 1;
+		int pivot = zahlen[rechts];
 
 // 
 
@@ -59,12 +64,12 @@ public class QuickSort {
 			}
 
 // Suche von rechts ein Element, welches gleich oder kleiner als das Pivotelement ist 
-while (j>links -1 && zahlen[j] > pivot) {
-	j = j-1
-}
-			if (i < j)  {
+			while (j > links && zahlen[j] >= pivot) {
+				j = j - 1;
+			}
+			if (i < j) {
 				int a = zahlen[i];
-				zahlen[j] = zahlen[i];
+				zahlen[i] = zahlen[j];
 				zahlen[j] = a;
 
 // tauschen 
@@ -72,9 +77,12 @@ while (j>links -1 && zahlen[j] > pivot) {
 			}
 
 		} while (i < j);
+		if (zahlen[i] > zahlen[rechts]) {
+			int b = zahlen[i];
+			zahlen[i] = zahlen[rechts];
+			zahlen[rechts] = b;
+		}
 
 		return i;
-
 	}
-
 }
