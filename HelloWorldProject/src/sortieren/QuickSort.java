@@ -30,7 +30,7 @@ public class QuickSort {
 			System.out.println(zahlen[i]);
 		}
 	}
-
+//						Stelle links, Stelle rechts
 	static void quicksort(int links, int rechts) {
 
 //falls links < rechts dann 
