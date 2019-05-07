@@ -29,6 +29,12 @@ public class MyFirstGUIWindow {
 	private Label OrtL;
 	private Text OrtTF;
 	private Button btnAbbruch;
+	private Label NachnameOut;
+	private Label StrasseOut;
+	private Label HausnummerOut;
+	private Label PLZOut;
+	private Label OrtOut;
+	private Label VornameOut;
 
 	/**
 	 * Launch the application.
@@ -63,63 +69,78 @@ public class MyFirstGUIWindow {
 	 */
 	protected void createContents() {
 		shell = new Shell();
-		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_GRAY));
+		shell.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		shell.setSize(845, 431);
 		shell.setText("SWT Application");
 		
 		Button btnKnopf = new Button(shell, SWT.NONE);
+		btnKnopf.setForeground(SWTResourceManager.getColor(SWT.COLOR_WHITE));
+		btnKnopf.setBackground(SWTResourceManager.getColor(SWT.COLOR_BLUE));
 		btnKnopf.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-			System.out.println("Heast Lass mich arbeiten"+"\n"+"biep, crashjfbvdkj -d-sf􄋀4"+"\n"+"                "+"\n"+"-------------");
+			System.out.println("Lass mich arbeiten"+"\n"+"biep, crashjfbvdkj -d-sf􄋀4"+"\n"+"                "+"\n"+"-------------");
 			System.out.println(vornameTF.getText()+"\n"+NachnameTf.getText()+"\n"+StrasseTF.getText()+"\n"+HausnummerTF.getText()+"\n"+PLZ_TF.getText()+"\n"+OrtTF.getText());
+			
+			getVornameOut().setText(getVornameTF().getText());
+			getNachnameOut().setText(getNachnameTf().getText());
+			getStrasseOut().setText(getStrasseTF().getText());
+			getHausnummerOut().setText(getHausnummerTF().getText());
+			getPLZOut().setText(getPLZ_TF().getText());
+			getOrtOut().setText(getOrtTF().getText());
+			
 			}
 		});
-		btnKnopf.setBounds(59, 227, 164, 25);
+		btnKnopf.setBounds(19, 258, 287, 110);
 		btnKnopf.setText("Knopf101");
 		
 		vornameTF = new Text(shell, SWT.BORDER);
-		vornameTF.setBounds(95, 38, 128, 18);
+		vornameTF.setBounds(111, 35, 128, 18);
 		
 		Label VornameL = new Label(shell, SWT.NONE);
-		VornameL.setBounds(19, 41, 55, 15);
+		VornameL.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
+		VornameL.setBounds(19, 38, 55, 15);
 		VornameL.setText("Vorname");
 		
 		NachnameL = new Label(shell, SWT.NONE);
+		NachnameL.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		NachnameL.setBounds(19, 69, 65, 15);
 		NachnameL.setText("Nachname");
 		
 		StrasseL = new Label(shell, SWT.NONE);
+		StrasseL.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		StrasseL.setBounds(19, 90, 55, 15);
 		StrasseL.setText("Stra\u00DFe");
 		
 		HausnummerL = new Label(shell, SWT.NONE);
-		HausnummerL.setBounds(19, 111, 80, 15);
+		HausnummerL.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
+		HausnummerL.setBounds(19, 129, 80, 15);
 		HausnummerL.setText("Hausnummer");
 		
 		PLZ_L = new Label(shell, SWT.NONE);
+		PLZ_L.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		PLZ_L.setBounds(19, 158, 55, 15);
 		PLZ_L.setText("PLZ");
 		
 		NachnameTf = new Text(shell, SWT.BORDER);
-		NachnameTf.setBounds(95, 69, 128, 15);
+		NachnameTf.setBounds(111, 59, 128, 19);
 		
 		StrasseTF = new Text(shell, SWT.BORDER);
-		StrasseTF.setBounds(95, 87, 114, 21);
+		StrasseTF.setBounds(111, 87, 128, 18);
 		
 		HausnummerTF = new Text(shell, SWT.BORDER);
-		HausnummerTF.setBounds(95, 111, 114, 21);
+		HausnummerTF.setBounds(111, 126, 128, 18);
 		
 		PLZ_TF = new Text(shell, SWT.BORDER);
-		PLZ_TF.setBounds(95, 155, 114, 18);
+		PLZ_TF.setBounds(111, 155, 128, 18);
 		
 		OrtL = new Label(shell, SWT.NONE);
-		OrtL.setBackground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_BACKGROUND));
+		OrtL.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		OrtL.setBounds(19, 179, 55, 15);
 		OrtL.setText("Ort");
 		
 		OrtTF = new Text(shell, SWT.BORDER);
-		OrtTF.setBounds(95, 176, 114, 18);
+		OrtTF.setBounds(111, 176, 128, 18);
 		
 		btnAbbruch = new Button(shell, SWT.NONE);
 		btnAbbruch.setBackground(SWTResourceManager.getColor(SWT.COLOR_YELLOW));
@@ -131,7 +152,7 @@ public class MyFirstGUIWindow {
 				System.exit(0);
 			}
 		});
-		btnAbbruch.setBounds(351, 38, 342, 214);
+		btnAbbruch.setBounds(452, 38, 342, 110);
 		btnAbbruch.setText("ABBRUCH");
 		
 		Composite composite = new Composite(shell, SWT.NONE);
@@ -142,7 +163,65 @@ public class MyFirstGUIWindow {
 			}
 		});
 		composite.setBounds(351, 258, 342, 110);
+		
+		NachnameOut = new Label(shell, SWT.NONE);
+		NachnameOut.setBounds(251, 59, 55, 15);
+		
+		StrasseOut = new Label(shell, SWT.NONE);
+		StrasseOut.setBounds(251, 90, 55, 15);
+		
+		HausnummerOut = new Label(shell, SWT.NONE);
+		HausnummerOut.setBounds(256, 129, 55, 15);
+		
+		PLZOut = new Label(shell, SWT.NONE);
+		PLZOut.setBounds(256, 158, 55, 15);
+		
+		OrtOut = new Label(shell, SWT.NONE);
+		OrtOut.setBounds(256, 179, 55, 15);
+		
+		VornameOut = new Label(shell, SWT.NONE);
+		VornameOut.setBounds(251, 35, 55, 15);
 		shell.setTabList(new Control[]{vornameTF, NachnameTf, StrasseTF, HausnummerTF, PLZ_TF, OrtTF, btnKnopf});
 
+	}
+
+	public Label getLabel() {
+		return VornameOut;
+	}
+	public Text getVornameTF() {
+		return vornameTF;
+	}
+	public Text getNachnameTf() {
+		return NachnameTf;
+	}
+	public Text getStrasseTF() {
+		return StrasseTF;
+	}
+	public Text getHausnummerTF() {
+		return HausnummerTF;
+	}
+	public Text getPLZ_TF() {
+		return PLZ_TF;
+	}
+	public Text getOrtTF() {
+		return OrtTF;
+	}
+	public Label getNachnameOut() {
+		return NachnameOut;
+	}
+	public Label getVornameOut() {
+		return VornameOut;
+	}
+	public Label getStrasseOut() {
+		return StrasseOut;
+	}
+	public Label getHausnummerOut() {
+		return HausnummerOut;
+	}
+	public Label getPLZOut() {
+		return PLZOut;
+	}
+	public Label getOrtOut() {
+		return OrtOut;
 	}
 }
