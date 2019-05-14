@@ -9,6 +9,9 @@ import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.wb.swt.SWTResourceManager;
+
+import data.Person;
+
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.events.MouseMoveListener;
@@ -89,6 +92,13 @@ public class MyFirstGUIWindow {
 			getPLZOut().setText(getPLZ_TF().getText());
 			getOrtOut().setText(getOrtTF().getText());
 			
+			Person p1; //
+			p1 = new Person();
+			
+			p1.setVorname(getVornameTF().getText());
+			p1.setNachname(getNachnameTf().getText());
+			
+			System.out.println(p1);
 			}
 		});
 		btnKnopf.setBounds(19, 258, 287, 110);

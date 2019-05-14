@@ -48,4 +48,9 @@ public class Person {
 	private String plz;
 	private String strasse;
 	private String hausnummer;
+	
+	@Override
+	public String toString() {
+		return getNachname() + ", " + getVorname();
+	}
 }
