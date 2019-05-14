@@ -66,7 +66,7 @@ public class Person {
 
 	@Override
 	public String toString() {
-		return getNachname() + ", " + getVorname() + "\n" + getPlz() + getStrasse() + "\n" + getHausnummer() + "\n"
+		return getNachname() + ", " + getVorname() + "\n" + getStrasse() + "\n" + getHausnummer() + "\n" + getPlz() + "\n"
 				+ getOrt();
 	}
 

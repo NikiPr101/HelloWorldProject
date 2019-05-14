@@ -98,9 +98,9 @@ public class MyFirstGUIWindow {
 			p1.setVorname(getVornameTF().getText());
 			p1.setNachname(getNachnameTf().getText());
 			p1.setStrasse(getStrasseTF().getText());
-			p1.getHausnummer(getHausnummerTF().getText());
-			p1.getPlz(getPLZ_TF().getText());
-			p1.getOrt(getOrtTF().getText());
+			p1.setHausnummer(getHausnummerTF().getText());
+			p1.setPlz(getPLZ_TF().getText());
+			p1.setOrt(getOrtTF().getText());
 			//
 			System.out.println(p1);
 			//
