@@ -94,11 +94,26 @@ public class MyFirstGUIWindow {
 			
 			Person p1; //
 			p1 = new Person();
-			
+			//
 			p1.setVorname(getVornameTF().getText());
 			p1.setNachname(getNachnameTf().getText());
-			
+			p1.setStrasse(getStrasseTF().getText());
+			//p1.getHausnummer(getHausnummerTF().getText());
+			//p1.getPlz(getPLZ_TF().getText());
+			//p1.getOrt(getOrtTF().getText());
+			//
 			System.out.println(p1);
+			//
+			Person.getListe().add(p1);
+			//
+		System.out.println(Person.getListe());
+			//
+			getVornameTF().setText("");
+			getNachnameTf().setText("");
+			getStrasseTF().setText("");
+			getHausnummerTF().setText("");
+			getPLZ_TF().setText("");
+			getOrtTF().setText("");
 			}
 		});
 		btnKnopf.setBounds(19, 258, 287, 110);
