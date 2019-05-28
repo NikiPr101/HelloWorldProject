@@ -1,8 +1,14 @@
 package gui;
 
 import org.eclipse.swt.widgets.Display;
+import org.eclipse.swt.widgets.FileDialog;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.swt.widgets.Button;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
@@ -132,7 +138,7 @@ public class MyFirstGUIWindow {
 		
 		NachnameL = new Label(shell, SWT.NONE);
 		NachnameL.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
-		NachnameL.setBounds(19, 69, 65, 15);
+		NachnameL.setBounds(19, 59, 65, 15);
 		NachnameL.setText("Nachname");
 		
 		StrasseL = new Label(shell, SWT.NONE);
@@ -193,21 +199,28 @@ public class MyFirstGUIWindow {
 		composite.setBounds(351, 258, 342, 110);
 		
 		NachnameOut = new Label(shell, SWT.NONE);
+		NachnameOut.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		NachnameOut.setBounds(251, 59, 55, 15);
 		
 		StrasseOut = new Label(shell, SWT.NONE);
+		StrasseOut.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		StrasseOut.setBounds(251, 90, 55, 15);
 		
 		HausnummerOut = new Label(shell, SWT.NONE);
+		HausnummerOut.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		HausnummerOut.setBounds(256, 129, 55, 15);
 		
 		PLZOut = new Label(shell, SWT.NONE);
+		PLZOut.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		PLZOut.setBounds(256, 158, 55, 15);
 		
 		OrtOut = new Label(shell, SWT.NONE);
+		OrtOut.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
+		OrtOut.setAlignment(SWT.CENTER);
 		OrtOut.setBounds(256, 179, 55, 15);
 		
 		VornameOut = new Label(shell, SWT.NONE);
+		VornameOut.setBackground(SWTResourceManager.getColor(SWT.COLOR_CYAN));
 		VornameOut.setBounds(251, 35, 55, 15);
 		
 		Button btnJson = new Button(shell, SWT.NONE);
@@ -216,11 +229,38 @@ public class MyFirstGUIWindow {
 			public void widgetSelected(SelectionEvent e) {
 				Gson gson = new GsonBuilder().setPrettyPrinting().create();
 				//
-				System.out.println(gson.toJson(Person.getListe()));
+				//System.out.println(gson.toJson(Person.getListe()));
+				try {
+					File jsonFile = File.createTempFile("wpfinf-json-", ".schas123");
+					FileWriter fw = new FileWriter(jsonFile);
+					//
+					gson.toJson(Person.getListe(), fw);
+					//
+					fw.flush();
+					fw.close();
+					//
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 			}
 		});
 		btnJson.setBounds(125, 227, 75, 25);
 		btnJson.setText("JSon");
+		
+		Button btnLoad = new Button(shell, SWT.NONE);
+		btnLoad.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				FileDialog fd = new FileDialog(shell, SWT.OPEN);
+				//
+				fd.setFilterExtensions(new String[] {"schas123"});
+				fd.setFilterPath("%TEMP%");
+				fd.open();
+			}
+		});
+		btnLoad.setBounds(231, 227, 75, 25);
+		btnLoad.setText("Load");
 		shell.setTabList(new Control[]{vornameTF, NachnameTf, StrasseTF, HausnummerTF, PLZ_TF, OrtTF, btnKnopf});
 
 	}
