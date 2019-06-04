@@ -96,7 +96,7 @@ public class MyFirstGUIWindow {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 			System.out.println("Lass mich arbeiten"+"\n"+"biep, crashjfbvdkj -d-sf􄋀4"+"\n"+"                "+"\n"+"-------------");
-			System.out.println(vornameTF.getText()+"\n"+NachnameTf.getText()+"\n"+StrasseTF.getText()+"\n"+HausnummerTF.getText()+"\n"+PLZ_TF.getText()+"\n"+OrtTF.getText());
+			System.out.println(vornameTF.getText()+"\n"+NachnameTf.getText()+"\n"+StrasseTF.getText()+"\n"+HausnummerTF.getText()+"\n"+PLZ_TF.getText()+"\n"+OrtTF.getText() + "\n");
 			
 			getVornameOut().setText(getVornameTF().getText());
 			getNachnameOut().setText(getNachnameTf().getText());
