@@ -11,6 +11,10 @@ public class Person {
 		return vorname;
 	}
 
+	public static void setListe(ArrayList<Person> liste) {
+		Person.liste = liste;
+	}
+
 	public void setVorname(String vorname) {
 		this.vorname = vorname;
 	}
